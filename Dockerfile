@@ -16,4 +16,4 @@ USER 1001
 
 EXPOSE 8080
 
-ENTRYPOINT ["dotnet", "Argos.Api.dll"]
+ENTRYPOINT ["sh", "-c", "sleep 40 && dotnet Argos.Api.dll"]
