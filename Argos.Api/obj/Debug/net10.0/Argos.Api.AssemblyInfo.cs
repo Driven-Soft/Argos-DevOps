@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Argos.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5230be67a8e799649058d4325c6fe68d2799915")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f23cf69988ddb51e931a66d0b8711c416b22d68")]
 [assembly: System.Reflection.AssemblyProductAttribute("Argos.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Argos.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

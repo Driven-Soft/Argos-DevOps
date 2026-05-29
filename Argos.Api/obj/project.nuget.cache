@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I+2rEIho3fo=",
+  "dgSpecHash": "9ltt7ciodis=",
   "success": true,
-  "projectFilePath": "C:\\Users\\shhit\\Desktop\\Argos-DevOps\\Argos.Api\\Argos.Api.csproj",
+  "projectFilePath": "C:\\Users\\shhit\\Desktop\\fiap\\gs-fiap\\Argos-DevOps\\Argos.Api\\Argos.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\shhit\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\shhit\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.8\\microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",

@@ -2918,11 +2918,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\shhit\\Desktop\\Argos-DevOps\\Argos.Api\\Argos.Api.csproj",
+      "projectUniqueName": "C:\\Users\\shhit\\Desktop\\fiap\\gs-fiap\\Argos-DevOps\\Argos.Api\\Argos.Api.csproj",
       "projectName": "Argos.Api",
-      "projectPath": "C:\\Users\\shhit\\Desktop\\Argos-DevOps\\Argos.Api\\Argos.Api.csproj",
+      "projectPath": "C:\\Users\\shhit\\Desktop\\fiap\\gs-fiap\\Argos-DevOps\\Argos.Api\\Argos.Api.csproj",
       "packagesPath": "C:\\Users\\shhit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shhit\\Desktop\\Argos-DevOps\\Argos.Api\\obj\\",
+      "outputPath": "C:\\Users\\shhit\\Desktop\\fiap\\gs-fiap\\Argos-DevOps\\Argos.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\shhit\\AppData\\Roaming\\NuGet\\NuGet.Config"
