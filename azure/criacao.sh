@@ -7,7 +7,7 @@
 GRUPO=argos
 LOCATION=brazilsouth
 USER=azureuser
-PASSWORD='argos@2026'
+PASSWORD='Argos@2026'
 
 RG=rg-$GRUPO
 VNET=vnet-$GRUPO
