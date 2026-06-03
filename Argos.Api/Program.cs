@@ -3,6 +3,8 @@ using Argos.Api.Exceptions;
 using Argos.Api.Extensions;
 using Argos.Infrastructure.Persistence;
 
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers()
@@ -20,18 +22,16 @@ builder.Services.AddDbContext(builder.Configuration);
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(options => options.RoutePrefix = "swagger");
-
-    // Seeds mínimos — idempotente, só roda em desenvolvimento.
-    await ArgosSeeder.SeedAsync(app.Services);
-}
-
 app.UseHttpsRedirection();
 app.UseExceptionHandler();
 app.UseAuthorization();
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ArgosContext>();
+
+    db.Database.Migrate();
+}
 
 app.Run();
