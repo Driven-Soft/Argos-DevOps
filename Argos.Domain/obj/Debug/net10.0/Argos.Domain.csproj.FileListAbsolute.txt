@@ -1,0 +1,12 @@
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Domain\bin\Debug\net10.0\Argos.Domain.deps.json
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Domain\bin\Debug\net10.0\Argos.Domain.dll
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Domain\bin\Debug\net10.0\Argos.Domain.pdb
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Domain\obj\Debug\net10.0\Argos.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Domain\obj\Debug\net10.0\Argos.Domain.AssemblyInfoInputs.cache
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Domain\obj\Debug\net10.0\Argos.Domain.AssemblyInfo.cs
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Domain\obj\Debug\net10.0\Argos.Domain.csproj.CoreCompileInputs.cache
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Domain\obj\Debug\net10.0\Argos.Domain.sourcelink.json
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Domain\obj\Debug\net10.0\Argos.Domain.dll
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Domain\obj\Debug\net10.0\refint\Argos.Domain.dll
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Domain\obj\Debug\net10.0\Argos.Domain.pdb
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Domain\obj\Debug\net10.0\ref\Argos.Domain.dll

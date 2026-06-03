@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Argos.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Argos.Api.Controllers.AlertaController.Buscar(System.String,System.Nullable{Argos.Domain.Enums.NivelRisco})">
+            <summary>
+            Feed de alertas, filtrável por <c>status</c> (ativo/inativo) e <c>nivel</c>
+            (BAIXO/MEDIO/ALTO/CRITICO). Sem filtro retorna todos.
+            </summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.AlertaController.GetById(System.Int32)">
+            <summary>Obtém um alerta pelo id (DTO composto com zona e autor).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.AlertaController.Create(Argos.Application.DTOs.AlertaRequest)">
+            <summary>Cria um alerta (defesa civil).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.AlertaController.Update(System.Int32,Argos.Application.DTOs.AlertaPatchRequest)">
+            <summary>Atualiza/ativa/desativa um alerta (defesa civil).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.AlertaController.Delete(System.Int32)">
+            <summary>Desativa um alerta (soft delete).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.ComentarioController.GetAll(System.Int32)">
+            <summary>Lista os comentários ativos de uma ocorrência (autor/papel derivados do usuário).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.ComentarioController.Create(System.Int32,Argos.Application.DTOs.ComentarioRequest)">
+            <summary>Adiciona um comentário (a ocorrência vem da rota; o autor, do corpo).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.ComentarioController.Delete(System.Int32,System.Int32)">
+            <summary>Remove um comentário (soft delete — moderação).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.OcorrenciaController.Search(System.String,System.String)">
+            <summary>Feed/busca de ocorrências, filtrável por tipo (chave) e termo de texto.</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.OcorrenciaController.GetById(System.Int32)">
+            <summary>Obtém uma ocorrência pelo id.</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.OcorrenciaController.Create(Argos.Application.DTOs.OcorrenciaRequest)">
+            <summary>Registra uma ocorrência (o autor viaja como usuarioId no corpo).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.OcorrenciaController.Update(System.Int32,Argos.Application.DTOs.OcorrenciaPatchRequest)">
+            <summary>Atualiza status/nível/zona de uma ocorrência (defesa civil).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.OcorrenciaController.Delete(System.Int32)">
+            <summary>Remove uma ocorrência (exclusão física; comentários em cascata).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.TipoOcorrenciaController.GetAll">
+            <summary>Lista os tipos de ocorrência ativos (com a chave usada pelo app).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.TipoOcorrenciaController.GetById(System.Int32)">
+            <summary>Obtém um tipo de ocorrência pelo id.</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.TipoOcorrenciaController.Create(Argos.Application.DTOs.TipoOcorrenciaRequest)">
+            <summary>Cria um tipo de ocorrência.</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.TipoOcorrenciaController.Update(System.Int32,Argos.Application.DTOs.TipoOcorrenciaPatchRequest)">
+            <summary>Atualiza parcialmente um tipo de ocorrência.</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.TipoOcorrenciaController.Delete(System.Int32)">
+            <summary>Desativa um tipo de ocorrência (soft delete).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.UsuarioController.Create(Argos.Application.DTOs.UsuarioRequest)">
+            <summary>Cria um usuário e retorna o id (usado no cadastro do app).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.UsuarioController.GetAll">
+            <summary>Lista todos os usuários.</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.UsuarioController.GetById(System.Int32)">
+            <summary>Obtém um usuário pelo id.</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.UsuarioController.Update(System.Int32,Argos.Application.DTOs.UsuarioPatchRequest)">
+            <summary>Atualiza parcialmente um usuário.</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.UsuarioController.Delete(System.Int32)">
+            <summary>Desativa um usuário (soft delete).</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.ZonaRiscoController.GetAll">
+            <summary>Lista as zonas de risco.</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.ZonaRiscoController.GetById(System.Int32)">
+            <summary>Obtém uma zona de risco pelo id.</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.ZonaRiscoController.Create(Argos.Application.DTOs.ZonaRiscoRequest)">
+            <summary>Cria uma zona de risco.</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.ZonaRiscoController.Update(System.Int32,Argos.Application.DTOs.ZonaRiscoPatchRequest)">
+            <summary>Atualiza parcialmente uma zona de risco.</summary>
+        </member>
+        <member name="M:Argos.Api.Controllers.ZonaRiscoController.Delete(System.Int32)">
+            <summary>Desativa uma zona de risco (soft delete).</summary>
+        </member>
+        <member name="T:Argos.Api.Exceptions.GlobalExceptionHandler">
+            <summary>
+            Tratamento global de erros → <c>ProblemDetails</c> (RFC 7807). O <c>Detail</c>
+            só é exposto em Development:
+            <list type="bullet">
+            <item><see cref="T:System.ArgumentException"/>/<see cref="T:System.InvalidOperationException"/> → 400</item>
+            <item><see cref="T:System.Collections.Generic.KeyNotFoundException"/> → 404</item>
+            <item><see cref="T:System.UnauthorizedAccessException"/> → 401</item>
+            <item><see cref="T:Oracle.ManagedDataAccess.Client.OracleException"/> → 500 ("Banco de dados indisponível")</item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:Argos.Api.Exceptions.GlobalExceptionHandler.#ctor(Microsoft.AspNetCore.Http.IProblemDetailsService,Microsoft.Extensions.Hosting.IHostEnvironment)">
+            <summary>
+            Tratamento global de erros → <c>ProblemDetails</c> (RFC 7807). O <c>Detail</c>
+            só é exposto em Development:
+            <list type="bullet">
+            <item><see cref="T:System.ArgumentException"/>/<see cref="T:System.InvalidOperationException"/> → 400</item>
+            <item><see cref="T:System.Collections.Generic.KeyNotFoundException"/> → 404</item>
+            <item><see cref="T:System.UnauthorizedAccessException"/> → 401</item>
+            <item><see cref="T:Oracle.ManagedDataAccess.Client.OracleException"/> → 500 ("Banco de dados indisponível")</item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:Argos.Api.Extensions.PersistenceExtensions">
+            <summary>
+            Registro manual dos repositórios e do <see cref="T:Argos.Infrastructure.Persistence.ArgosContext"/> (Oracle).
+            A connection string vem de <c>ConnectionStrings:ArgosOracle</c>.
+            </summary>
+        </member>
+        <member name="T:Argos.Api.Extensions.ServiceExtensions">
+            <summary>
+            Registro manual dos serviços de aplicação. Cada recurso novo
+            precisa de uma linha aqui.
+            </summary>
+        </member>
+        <member name="T:Argos.Api.Extensions.SwaggerExtensions">
+            <summary>
+            Swagger via Swashbuckle.Annotations, com os comentários XML do projeto.
+            </summary>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Type)">
+            <summary>
+            Generates a documentation comment ID for a type.
+            Example: T:Namespace.Outer+Inner`1 becomes T:Namespace.Outer.Inner`1
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Reflection.PropertyInfo)">
+            <summary>
+            Generates a documentation comment ID for a property.
+            Example: P:Namespace.ContainingType.PropertyName or for an indexer P:Namespace.ContainingType.Item(System.Int32)
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Type,System.String)">
+            <summary>
+            Generates a documentation comment ID for a property given its container type and property name.
+            Example: P:Namespace.ContainingType.PropertyName
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Reflection.MethodInfo)">
+            <summary>
+            Generates a documentation comment ID for a method (or constructor).
+            For example:
+              M:Namespace.ContainingType.MethodName(ParamType1,ParamType2)~ReturnType
+              M:Namespace.ContainingType.#ctor(ParamType)
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.GetTypeDocId(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+            Generates a documentation ID string for a type.
+            This method handles nested types (replacing '+' with '.'),
+            generic types, arrays, pointers, by-ref types, and generic parameters.
+            The <paramref name="includeGenericArguments"/> flag controls whether
+            constructed generic type arguments are emitted, while <paramref name="omitGenericArity"/>
+            controls whether the generic arity marker (e.g. "`1") is appended.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.NormalizeDocId(System.String)">
+            <summary>
+            Normalizes a documentation comment ID to match the compiler-style format.
+            Strips the return type suffix for ordinary methods but retains it for conversion operators.
+            </summary>
+            <param name="docId">The documentation comment ID to normalize.</param>
+            <returns>The normalized documentation comment ID.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,16 @@
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\bin\Debug\net10.0\Argos.Application.deps.json
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\bin\Debug\net10.0\Argos.Application.dll
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\bin\Debug\net10.0\Argos.Application.pdb
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\bin\Debug\net10.0\Argos.Domain.dll
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\bin\Debug\net10.0\Argos.Domain.pdb
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\obj\Debug\net10.0\Argos.Application.csproj.AssemblyReference.cache
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\obj\Debug\net10.0\Argos.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\obj\Debug\net10.0\Argos.Application.AssemblyInfoInputs.cache
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\obj\Debug\net10.0\Argos.Application.AssemblyInfo.cs
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\obj\Debug\net10.0\Argos.Application.csproj.CoreCompileInputs.cache
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\obj\Debug\net10.0\Argos.Application.sourcelink.json
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\obj\Debug\net10.0\Argos.Ap.35949EDE.Up2Date
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\obj\Debug\net10.0\Argos.Application.dll
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\obj\Debug\net10.0\refint\Argos.Application.dll
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\obj\Debug\net10.0\Argos.Application.pdb
+C:\Users\shhit\Desktop\fiap\gs-fiap\Argos-DevOps\Argos.Application\obj\Debug\net10.0\ref\Argos.Application.dll

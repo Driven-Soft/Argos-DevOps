@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Argos.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9da8bc12c16811d5486140e2f9ff8a060136b9b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28ec6d8080bc5805ee8f95fc8b5bf0407ee36e28")]
 [assembly: System.Reflection.AssemblyProductAttribute("Argos.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Argos.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

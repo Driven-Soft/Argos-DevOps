@@ -31,7 +31,15 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ArgosContext>();
 
+    // 1. Cria as tabelas / aplica as migrations
     db.Database.Migrate();
+
+    // 2. Executa a injeção de dados da sua seed
+    // O método SeedAsync pede um IServiceProvider, que temos no scope!
+    await ArgosSeeder.SeedAsync(scope.ServiceProvider);
 }
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.Run();
