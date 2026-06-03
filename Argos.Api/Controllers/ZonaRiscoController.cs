@@ -1,77 +1,55 @@
+using Argos.Application.DTOs;
+using Argos.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Argos.Api.Data;
-using Argos.Api.Models;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Argos.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
-public class ZonaRiscoController : ControllerBase
+[Route("zonas-risco")]
+[Produces("application/json")]
+[SwaggerTag("Zonas de risco monitoradas (agrupam alertas e ocorrências).")]
+public class ZonaRiscoController(IZonaRiscoService service) : ControllerBase
 {
-    private readonly AppDbContext _context;
-
-    public ZonaRiscoController(AppDbContext context)
-    {
-        _context = context;
-    }
-
+    /// <summary>Lista as zonas de risco.</summary>
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<ZonaRisco>>> Get()
+    [ProducesResponseType(typeof(IReadOnlyCollection<ZonaRiscoResponse>), StatusCodes.Status200OK)]
+    public IActionResult GetAll() => Ok(service.GetAll());
+
+    /// <summary>Obtém uma zona de risco pelo id.</summary>
+    [HttpGet("{id:int}")]
+    [ProducesResponseType(typeof(ZonaRiscoResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public IActionResult GetById(int id)
     {
-        return await _context.ZonasRisco.ToListAsync();
+        var zona = service.GetById(id);
+        return zona is null ? NotFound() : Ok(zona);
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<ZonaRisco>> GetById(int id)
-    {
-        var zona = await _context.ZonasRisco.FindAsync(id);
-
-        if (zona == null)
-            return NotFound();
-
-        return zona;
-    }
-
+    /// <summary>Cria uma zona de risco.</summary>
     [HttpPost]
-    public async Task<ActionResult> Post(ZonaRisco zona)
+    [ProducesResponseType(typeof(ZonaRiscoResponse), StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public IActionResult Create([FromBody] ZonaRiscoRequest request)
     {
-        _context.ZonasRisco.Add(zona);
-
-        await _context.SaveChangesAsync();
-
-        return CreatedAtAction(
-            nameof(GetById),
-            new { id = zona.Id },
-            zona
-        );
+        var zona = service.Create(request);
+        return CreatedAtAction(nameof(GetById), new { id = zona.Id }, zona);
     }
 
-    [HttpPut("{id}")]
-    public async Task<ActionResult> Put(int id, ZonaRisco zona)
+    /// <summary>Atualiza parcialmente uma zona de risco.</summary>
+    [HttpPatch("{id:int}")]
+    [ProducesResponseType(typeof(ZonaRiscoResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public IActionResult Update(int id, [FromBody] ZonaRiscoPatchRequest request)
     {
-        if (id != zona.Id)
-            return BadRequest();
-
-        _context.Entry(zona).State = EntityState.Modified;
-
-        await _context.SaveChangesAsync();
-
-        return NoContent();
+        var zona = service.Update(id, request);
+        return zona is null ? NotFound() : Ok(zona);
     }
 
-    [HttpDelete("{id}")]
-    public async Task<ActionResult> Delete(int id)
-    {
-        var zona = await _context.ZonasRisco.FindAsync(id);
-
-        if (zona == null)
-            return NotFound();
-
-        _context.ZonasRisco.Remove(zona);
-
-        await _context.SaveChangesAsync();
-
-        return NoContent();
-    }
+    /// <summary>Desativa uma zona de risco (soft delete).</summary>
+    [HttpDelete("{id:int}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public IActionResult Delete(int id) => service.Delete(id) ? NoContent() : NotFound();
 }

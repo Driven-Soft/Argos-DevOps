@@ -1,35 +1,37 @@
-using Microsoft.EntityFrameworkCore;
-using Argos.Api.Data;
+using System.Text.Json.Serialization;
+using Argos.Api.Exceptions;
+using Argos.Api.Extensions;
+using Argos.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    // Enums saem como string UPPER_SNAKE no JSON (ex.: "ALTO", "EM_ANALISE") — contrato do app.
+    .AddJsonOptions(options =>
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
 builder.Services.AddEndpointsApiExplorer();
-
-builder.Services.AddSwaggerGen();
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseOracle(
-        builder.Configuration.GetConnectionString("argosOracle")
-    )
-);
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
+builder.Services.AddSwagger();
+builder.Services.AddServices();
+builder.Services.AddRepositories();
+builder.Services.AddDbContext(builder.Configuration);
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+if (app.Environment.IsDevelopment())
 {
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    app.UseSwagger();
+    app.UseSwaggerUI(options => options.RoutePrefix = "swagger");
 
-    db.Database.Migrate();
+    // Seeds mínimos — idempotente, só roda em desenvolvimento.
+    await ArgosSeeder.SeedAsync(app.Services);
 }
 
-app.UseSwagger();
-
-app.UseSwaggerUI();
-
+app.UseHttpsRedirection();
+app.UseExceptionHandler();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
