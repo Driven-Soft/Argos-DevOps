@@ -12,7 +12,7 @@ WORKDIR /app
 
 COPY --from=build /app/publish .
 
-USER 1001
+USER app
 
 EXPOSE 8080
 
