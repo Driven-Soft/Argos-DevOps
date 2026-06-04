@@ -52,7 +52,7 @@ Antes de iniciar a instalação, é necessário possuir:
 # Passo 1 - Clonar o Repositório
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/Driven-Soft/Argos-DevOps.git
 cd Argos-DevOps
 ```
 
