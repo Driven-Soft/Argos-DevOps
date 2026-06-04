@@ -52,7 +52,7 @@ Antes de iniciar a instalação, é necessário possuir:
 # Passo 1 - Clonar o Repositório
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/Driven-Soft/Argos-DevOps.git
 cd Argos-DevOps
 ```
 
@@ -84,7 +84,7 @@ chmod +x remocao.sh
 Execute o script de criação:
 
 ```bash
-./criacao.sh
+bash azure/criacao.sh
 ```
 
 O script realizará automaticamente:
@@ -252,7 +252,7 @@ Os dados deverão permanecer armazenados, comprovando a persistência através d
 Para remover todos os recursos criados na Azure:
 
 ```bash
-./remocao.sh
+bash azure/remocao.sh
 ```
 
 O script removerá completamente o Resource Group e todos os recursos associados ao projeto.
