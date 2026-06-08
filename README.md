@@ -2,11 +2,11 @@
 
 ## Descrição
 
-O ARGOS é uma solução desenvolvida para monitoramento preventivo de enchentes e deslizamentos em áreas de risco, integrando sensores IoT, processamento de dados e serviços em nuvem.
+O ARGOS é uma solução desenvolvida para monitoramento preventivo de enchentes e deslizamentos em áreas de risco através do uso de dados satelitais, integrando sensores IoT, processamento de dados e serviços em nuvem.
 
 A aplicação disponibiliza uma API REST desenvolvida em .NET e um banco de dados Oracle executados em containers Docker. A infraestrutura necessária para execução da solução é provisionada automaticamente na Microsoft Azure através de scripts de automação utilizando Azure CLI.
 
-O objetivo do projeto é demonstrar uma arquitetura moderna baseada em Cloud Computing, Containers e Banco de Dados Oracle, permitindo o gerenciamento de informações relacionadas ao monitoramento de áreas sujeitas a desastres naturais.
+O objetivo do projeto é demonstrar uma arquitetura moderna e integrada baseada em Cloud Computing, Containers e Banco de Dados Oracle, permitindo o gerenciamento de informações relacionadas ao monitoramento de áreas sujeitas a desastres naturais.
 
 ---
 
